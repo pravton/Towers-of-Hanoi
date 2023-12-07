@@ -1,5 +1,4 @@
 from node import Node
-
 class Stack:
   def __init__(self, name):
     self.size = 0
@@ -40,6 +39,18 @@ class Stack:
   
   def get_name(self):
     return self.name
+  
+  def clear(self):
+    self.top_item = None
+    self.size = 0
+  
+  def get_all_items(self):
+    items = []
+    current_node = self.top_item
+    while current_node:
+        items.append(current_node.get_value())
+        current_node = current_node.get_next_node()
+    return items
   
   def print_items(self):
     pointer = self.top_item
